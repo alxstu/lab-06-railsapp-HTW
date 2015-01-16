@@ -11,6 +11,7 @@ describe "order list", :type => :feature do
      expect(page).to have_content order.id
      expect(page).to have_content order.placed_on
      expect(page).to have_content order.status
+     expect(page).to have_content order.price
     end
   end
 end

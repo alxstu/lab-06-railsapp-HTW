@@ -2,12 +2,17 @@
 
 <p>
   <strong>Customer:</strong>
-  <%= @order.customer_id %>
+  <%= @order.customer.name %>
 </p>
 
 <p>
   <strong>Placed on:</strong>
   <%= @order.placed_on %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @order.price %>€
 </p>
 
 <p>
