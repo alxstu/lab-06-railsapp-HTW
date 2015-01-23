@@ -5,7 +5,7 @@ FactoryGirl.define do
     size  'm'
     price '15.6'
   end
-  factory :pinkBanana, class: Pumpkin do
+  factory :pinkBanana2, class: Pumpkin do
     name 'sugarpie'
     color 'orange'
     size  's'
