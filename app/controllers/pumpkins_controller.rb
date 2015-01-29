@@ -4,7 +4,11 @@ class PumpkinsController < ApplicationController
   # GET /pumpkins
   # GET /pumpkins.json
   def index
+    if params[:sort] == "true" then
+	@pumpkins = Pumpkin.order(params[:sortType])
+	else
     @pumpkins = Pumpkin.all
+	end
   end
 
   # GET /pumpkins/1

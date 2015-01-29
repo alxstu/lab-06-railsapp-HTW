@@ -3,14 +3,17 @@ class OrdersController < ApplicationController
 
   # GET /orders
   # GET /orders.json
+  # GET /customers
+  # GET /customers.json
   def index
     @orders = Order.all
+	@customers = Customer.all
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
-    @customer = @order.customer
+    @line_items = Order.find(params["id"]).line_items
   end
 
   # GET /orders/new
