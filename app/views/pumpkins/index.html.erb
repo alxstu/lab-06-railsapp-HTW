@@ -1,16 +1,16 @@
 <h1>Listing pumpkins</h1>
 
+<th><td><%= link_to 'de', '?locale=de' %></td></th>	
+<th><td><%= link_to 'en', '?locale=en' %></td></th>	
+
 <table>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th><%= link_to 'Price', {:controller => 'pumpkins', :action => 'index', :sort => true, :sortType => 'price' }%></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+      <th><%=t :type %></th>
+      <th><%=t :color %></th>
+      <th><%=t :size %></th>
+      <th><%= link_to t(:price), {:controller => 'pumpkins', :action => 'index', :sort => true, :sortType => 'price' }%></th>  </thead>
+</tr>
   <tbody>
     <% @pumpkins.each do |pumpkin| %>
       <tr>
@@ -18,9 +18,9 @@
         <td><%= pumpkin.color %></td>
         <td><%= pumpkin.size %></td>
         <td><%= pumpkin.price %></td>
-        <td><%= link_to 'Show', pumpkin %></td>
-        <td><%= link_to 'Edit', edit_pumpkin_path(pumpkin) %></td>
-        <td><%= link_to 'Destroy', pumpkin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:show), pumpkin %></td>
+        <td><%= link_to t(:edit), edit_pumpkin_path(pumpkin) %></td>
+        <td><%= link_to t(:destroy), pumpkin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Pumpkin', new_pumpkin_path %>
+<%= link_to t(:new_pumpkin), new_pumpkin_path %>
